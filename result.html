@@ -1,0 +1,148 @@
+<!-- result.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro&family=Literata');
+        
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_thcKyMecSsetYYUTh53l_ER0FZYJe2ykeD1EbvKhFA&s') center/cover no-repeat fixed;
+        }
+
+        h2 {
+            text-align: center;
+            display: flex;
+            align-items: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            background-color: #3b4f60;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
+            width: 350px;
+            height: 478px;
+            overflow-y: auto; 
+        }
+
+        .message-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .user-message {
+            align-self: flex-end;
+            background-color: #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 10px;
+            max-width: 70%; 
+        }
+
+        .system-message {
+            align-self: flex-start;
+            background-color: #4caf50;
+            color: #ffffff;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 10px;
+            max-width: 70%; 
+        }
+
+        .input {
+            width: 100%;
+            display: flex;
+            justify-content:space-around;
+            align-items: flex-end; 
+            align-self: flex-end; 
+            margin-top: auto; /* Adjusted margin-top to reduce the top height */
+            margin-left: 100px;
+        
+        }
+
+        input {
+            width: 60%; 
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #ffffff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            margin-right: 0px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .responsebox {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: fit-content;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Hello {{ ename }}, How can I assist you!! </h2>
+
+    <form action="/ask_question" method="post" accept-charset="UTF-8">
+        <input type="hidden" name="ename" value="{{ ename }}">
+        <input type="hidden" name="annincome" value="{{ annincome }}">
+        <input type="hidden" name="month_Jan" value="{{ month_Jan }}">
+        <input type="hidden" name="month_Feb" value="{{ month_Feb }}">
+        <input type="hidden" name="month_Mar" value="{{ month_Mar }}">
+        <input type="hidden" name="month_Apr" value="{{ month_Apr }}">
+        <input type="hidden" name="month_May" value="{{ month_May }}">
+        <input type="hidden" name="month_Jun" value="{{ month_Jun }}">
+        <input type="hidden" name="month_Jul" value="{{ month_Jul }}">
+        <input type="hidden" name="month_Aug" value="{{ month_Aug }}">
+        <input type="hidden" name="month_Sep" value="{{ month_Sep }}">
+        <input type="hidden" name="month_Oct" value="{{ month_Oct }}">
+        <input type="hidden" name="month_Nov" value="{{ month_Nov }}">
+        <input type="hidden" name="month_Dec" value="{{ month_Dec }}">
+        
+        <div class="message-container">
+            {% if user_question %}
+                <div class="user-message">
+                    {{ user_question }}
+                </div>
+            {% endif %}
+            {% if response %}
+                <div class="system-message">
+                    {{ response }}
+                </div>
+            {% endif %}
+        </div>
+        
+        <div class="input">
+            <input type="text" id="user_question" name="user_question" required placeholder="Type your message...">
+            <button type="submit">SEND</button>
+        </div>
+    </form>
+</body>
+
+</html>

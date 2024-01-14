@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Information</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro&family=Literata');
+        body {
+
+            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_thcKyMecSsetYYUTh53l_ER0FZYJe2ykeD1EbvKhFA&s') center/cover no-repeat fixed; 
+
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        
+        }
+
+            
+           
+
+        form {
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #ffffff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Enter your Employee Credentials here...!!!</h2>
+    <form action="/result1" method="post">
+        <label for="ename">Enter your name:</label>
+        <input type="text" name="ename" required>
+        <br>
+        <label for="empid">Enter your id:</label>
+        <input type="number" name="empid" required>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
